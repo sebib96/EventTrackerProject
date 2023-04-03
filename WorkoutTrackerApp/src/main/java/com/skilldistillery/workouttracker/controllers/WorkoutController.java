@@ -33,6 +33,15 @@ public class WorkoutController {
 	public List<Workout> getWorkouts() {
 		return workoutService.listAllWorkouts();
 	}
+	
+	@GetMapping("workouts/{workoutId}")
+	public Workout getWorkoutById(@PathVariable int workoutId, HttpServletResponse res) {
+		Workout workout = workoutDao.findById(workoutId);
+		if(workout == null) {
+			res.setStatus(404);
+		}
+		return workout;
+	}
 
 	@PostMapping("workouts")
 	public Workout createWorkout(@RequestBody Workout workout, HttpServletRequest req, HttpServletResponse res) {
