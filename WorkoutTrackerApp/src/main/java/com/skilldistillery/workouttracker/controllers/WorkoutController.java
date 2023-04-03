@@ -74,7 +74,7 @@ public class WorkoutController {
 	public void deleteWorkout(@PathVariable int workoutId, HttpServletResponse res) {
 		try {
 			if(workoutDao.deleteById(workoutId)) {
-				res.setStatus(0);
+				res.setStatus(204);
 			} else
 				res.setStatus(404);
 		} catch (Exception e) {
