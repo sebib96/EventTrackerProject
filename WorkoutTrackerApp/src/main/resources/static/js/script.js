@@ -1,8 +1,10 @@
 window.addEventListener('load', function(e){
-	console.log('script.js is updated');
+	console.log('script.js is updated 2');
 	init();
 	addWorkout();
 });
+
+linebreak = document.createElement('br');
 
 function init(){
 	console.log('in init');
@@ -32,17 +34,17 @@ function displayWorkoutList(workoutList){
 		let tr = document.createElement('tr');
 		tbody.appendChild(tr);
 		
-		let td = document.createElement('td');
-		td.textContent = workout.id;
-		tr.appendChild(td);
+		let workoutId = document.createElement('td');
+		workoutId.textContent = workout.id;
+		tr.appendChild(workoutId);
 		
-		td = document.createElement('td');
-		td.textContent = workout.name;
-		tr.appendChild(td);
+		let workoutName = document.createElement('td');
+		workoutName.textContent = workout.name;
+		tr.appendChild(workoutName);
 
-		td = document.createElement('td');
-		td.textContent = workout.date;
-		tr.appendChild(td);
+		let workoutDate = document.createElement('td');
+		workoutDate.textContent = workout.date;
+		tr.appendChild(workoutDate);
 
 		tr.addEventListener('click', function(e){
 			e.preventDefault();
@@ -50,6 +52,8 @@ function displayWorkoutList(workoutList){
 			console.log(workoutId);
 			getWorkout(workoutId);
 		});
+
+
 
 	}
 }
@@ -99,31 +103,77 @@ function displayWorkout(workout){
 	let workoutRpe = document.createElement('p');
 	workoutRpe.textContent = "RPE: " + workout.rpe;
 	detailDiv.appendChild(workoutRpe);
+
+
+	let updateWorkoutDiv = document.createElement('div');
+	let updateWorkoutTitle = document.createElement('h3');
+	updateWorkoutTitle.textContent = "Update Workout";
+	updateWorkoutDiv.appendChild(updateWorkoutTitle);
+	detailDiv.appendChild(updateWorkoutDiv);
+
+	let updateWorkoutForm = document.createElement('form');
+	updateWorkoutForm.setAttribute('method', 'PUT');
+
+	let updateWorkoutDate = document.createElement('input');
+	updateWorkoutDate.setAttribute('type', 'date');
+	updateWorkoutDiv.appendChild(updateWorkoutDate);
+
+	let updateWorkoutName = document.createElement('input');
+	updateWorkoutName.setAttribute('type', 'text');
+	updateWorkoutDiv.appendChild(updateWorkoutName);
+
+	let updateWorkoutGroup = document.createElement('input');
+	updateWorkoutGroup.setAttribute('type','text');
+	updateWorkoutDiv.appendChild(updateWorkoutGroup);
+
+	let updateWorkoutWeight = document.createElement('input');
+	updateWorkoutWeight.setAttribute('type','text');
+	updateWorkoutDiv.appendChild(updateWorkoutWeight);
+
+	let updateWorkoutReps = document.createElement('input');
+	updateWorkoutReps.setAttribute('type', 'text');
+	updateWorkoutDiv.appendChild(updateWorkoutReps);
+
+	let updateWorkoutSets = document.createElement('input');
+	updateWorkoutSets.setAttribute('type', 'text');
+	updateWorkoutDiv.appendChild(updateWorkoutSets);
+
+	let updateWorkoutRpe = document.createElement('input');
+	updateWorkoutRpe.setAttribute('type', 'text');
+	updateWorkoutDiv.appendChild(updateWorkoutRpe);
+
+	let updateWorkout = document.createElement('input');
+	updateWorkout.setAttribute('type', 'submit');
+	updateWorkout.setAttribute('value', 'Update Workout');
 }
 
 function addWorkout(){
 	let newWorkoutDiv = document.getElementById('newWorkoutFormDiv');
 	newWorkoutDiv.textContent = '';
-
+	let newWorkoutTitle = document.createElement("h3");
+	newWorkoutTitle.textContent = "Log Workout";
+	newWorkoutDiv.appendChild(newWorkoutTitle);
 
 	let newWorkoutForm = document.createElement('form');
 	newWorkoutForm.setAttribute('method', 'POST');
 
-
 	let workoutDay = document.createElement('input');
 	workoutDay.setAttribute('type', 'date');
 	workoutDay.setAttribute('placeholder', 'Day:');
+	newWorkoutForm.appendChild(document.createElement('br'));
 	newWorkoutForm.appendChild(workoutDay);
 
 	let workoutName = document.createElement('input');
 	workoutName.setAttribute('type', 'text');
 	workoutName.setAttribute('placeholder', 'Workout Name');
+	newWorkoutForm.appendChild(document.createElement('br'));
 	newWorkoutForm.appendChild(workoutName);
 
 
 	let workoutMuscleGroup = document.createElement('input');
 	workoutMuscleGroup.setAttribute('type', 'text');
 	workoutMuscleGroup.setAttribute('placeholder', 'Muscle Group');
+	newWorkoutForm.appendChild(document.createElement('br'));
 	newWorkoutForm.appendChild(workoutMuscleGroup);
 
 	let workoutReps = document.createElement('input');
@@ -134,6 +184,7 @@ function addWorkout(){
 	let workoutWeight = document.createElement('input');
 	workoutWeight.setAttribute('type', 'text');
 	workoutWeight.setAttribute('placeholder', 'Weight');
+	newWorkoutForm.appendChild(document.createElement('br'));
 	newWorkoutForm.appendChild(workoutWeight);
 
 	let workoutSets = document.createElement('input');
@@ -144,7 +195,9 @@ function addWorkout(){
 	let workoutRpe = document.createElement('input');
 	workoutRpe.setAttribute('type', 'text');
 	workoutRpe.setAttribute('placeholder', 'RPE');
+	newWorkoutForm.appendChild(document.createElement('br'));
 	newWorkoutForm.appendChild(workoutRpe);
+
 
 	let submitWorkout = document.createElement('input');
 	submitWorkout.setAttribute('type', 'submit');
@@ -153,6 +206,9 @@ function addWorkout(){
 	newWorkoutDiv.appendChild(newWorkoutForm);
 	newWorkoutDiv.appendChild(submitWorkout);
 
+};
 
-}
+function deleteWorkout(){
+	
+};
 
