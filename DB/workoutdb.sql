@@ -50,11 +50,18 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `workoutdb`;
-INSERT INTO `workout` (`id`, `muscle_group`, `day`, `weight`, `reps`, `name`, `rpe`, `sets`) VALUES (1, 'Chest', '2023-03-17', 250, 5, 'Bench Press', 9, NULL);
-INSERT INTO `workout` (`id`, `muscle_group`, `day`, `weight`, `reps`, `name`, `rpe`, `sets`) VALUES (2, 'Back', '2023-03-18', 315, 10, 'Deadlift', 9, NULL);
-INSERT INTO `workout` (`id`, `muscle_group`, `day`, `weight`, `reps`, `name`, `rpe`, `sets`) VALUES (3, 'Bicep', '2023-03-18', 100, 12, 'Curl', 7, NULL);
-INSERT INTO `workout` (`id`, `muscle_group`, `day`, `weight`, `reps`, `name`, `rpe`, `sets`) VALUES (4, 'Tricep', '2023-03-17', 30, 12, 'Single Arm Extension', 7, NULL);
-INSERT INTO `workout` (`id`, `muscle_group`, `day`, `weight`, `reps`, `name`, `rpe`, `sets`) VALUES (5, 'Abdominal', '2023-03-18', 0, 20, 'Crunch', 6, NULL);
+INSERT INTO `workout` (`id`, `muscle_group`, `day`, `weight`, `reps`, `name`, `rpe`, `sets`) VALUES (1, 'Chest', '2023-03-17', 250, 5, 'Bench Press', 9, 2);
+INSERT INTO `workout` (`id`, `muscle_group`, `day`, `weight`, `reps`, `name`, `rpe`, `sets`) VALUES (2, 'Back', '2023-03-18', 315, 10, 'Deadlift', 9, 3);
+INSERT INTO `workout` (`id`, `muscle_group`, `day`, `weight`, `reps`, `name`, `rpe`, `sets`) VALUES (3, 'Bicep', '2023-03-18', 100, 12, 'Curl', 7, 4);
+INSERT INTO `workout` (`id`, `muscle_group`, `day`, `weight`, `reps`, `name`, `rpe`, `sets`) VALUES (4, 'Tricep', '2023-03-17', 30, 12, 'Single Arm Extension', 7, 3);
+INSERT INTO `workout` (`id`, `muscle_group`, `day`, `weight`, `reps`, `name`, `rpe`, `sets`) VALUES (5, 'Abdominal', '2023-03-18', 0, 20, 'Crunch', 6, 4);
+INSERT INTO `workout` (`id`, `muscle_group`, `day`, `weight`, `reps`, `name`, `rpe`, `sets`) VALUES (6, 'Back', '2023-03-22', 130, 12, 'Lat Pulldown', 7, 3);
+INSERT INTO `workout` (`id`, `muscle_group`, `day`, `weight`, `reps`, `name`, `rpe`, `sets`) VALUES (7, 'Back', '2023-03-22', 150, 10, 'Bent Over Row', 8, 3);
+INSERT INTO `workout` (`id`, `muscle_group`, `day`, `weight`, `reps`, `name`, `rpe`, `sets`) VALUES (8, 'Bicep', '2023-03-22', 150, 10, 'Preacher Curl', 8, 3);
+INSERT INTO `workout` (`id`, `muscle_group`, `day`, `weight`, `reps`, `name`, `rpe`, `sets`) VALUES (9, 'Bicep', '2023-03-22', 30, 12, 'Hammer Curl', 8, 3);
+INSERT INTO `workout` (`id`, `muscle_group`, `day`, `weight`, `reps`, `name`, `rpe`, `sets`) VALUES (10, 'Legs', '2023-03-24', 315, 8, 'Squat', 8, 4);
+INSERT INTO `workout` (`id`, `muscle_group`, `day`, `weight`, `reps`, `name`, `rpe`, `sets`) VALUES (11, 'Legs', '2023-03-24', 120, 4, 'Bulgarian Split Squat', 9, 4);
+INSERT INTO `workout` (`id`, `muscle_group`, `day`, `weight`, `reps`, `name`, `rpe`, `sets`) VALUES (12, 'Abdominal', '2023-03-24', 0, 4, 'Crunch', 6, 4);
 
 COMMIT;
 

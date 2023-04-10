@@ -2,7 +2,6 @@ window.addEventListener('load', function(e){
 	console.log('script.js is updated 2');
 	init();
 	addWorkout();
-	deleteWorkout();
 });
 
 linebreak = document.createElement('br');
@@ -169,11 +168,13 @@ function displayWorkout(workout){
 	updateWorkout.setAttribute('type', 'submit');
 	updateWorkout.setAttribute('value', 'Update Workout');
 
+	// Delete Workout Div
 	let deleteWorkoutForm = document.createElement('form');
 	deleteWorkoutForm.setAttribute('method', 'DELETE');
 
 	let deleteWorkoutBtn = document.createElement('input');
 	deleteWorkoutBtn.setAttribute('type', 'submit');
+	deleteWorkoutBtn.setAttribute('type', 'integer');
 	deleteWorkoutBtn.setAttribute('value', 'Delete Workout');
 
 	detailDiv.appendChild(deleteWorkoutForm);
