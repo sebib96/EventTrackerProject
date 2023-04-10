@@ -106,6 +106,7 @@ function displayWorkout(workout){
 	detailDiv.appendChild(workoutRpe);
 
 
+	// UPDATE WORKOUT DIV
 	let updateWorkoutDiv = document.createElement('div');
 	let updateWorkoutTitle = document.createElement('h3');
 	updateWorkoutTitle.textContent = "Update Workout";
@@ -116,31 +117,52 @@ function displayWorkout(workout){
 	updateWorkoutForm.setAttribute('method', 'PUT');
 
 	let updateWorkoutDate = document.createElement('input');
+	let updateWorkoutDateTitle = document.createElement('p');
+	updateWorkoutDateTitle.textContent = 'Date:';
 	updateWorkoutDate.setAttribute('type', 'date');
+	updateWorkoutDiv.appendChild(updateWorkoutDateTitle);
 	updateWorkoutDiv.appendChild(updateWorkoutDate);
 
 	let updateWorkoutName = document.createElement('input');
 	updateWorkoutName.setAttribute('type', 'text');
+	let updateWorkoutNameTitle = document.createElement('p');
+	updateWorkoutNameTitle.textContent = 'Name:';
+	updateWorkoutDiv.appendChild(updateWorkoutNameTitle);
 	updateWorkoutDiv.appendChild(updateWorkoutName);
 
 	let updateWorkoutGroup = document.createElement('input');
 	updateWorkoutGroup.setAttribute('type','text');
+	let updateWorkoutGroupTitle = document.createElement('p');
+	updateWorkoutGroupTitle.textContent = 'Group:';
+	updateWorkoutDiv.appendChild(updateWorkoutGroupTitle);
 	updateWorkoutDiv.appendChild(updateWorkoutGroup);
 
 	let updateWorkoutWeight = document.createElement('input');
 	updateWorkoutWeight.setAttribute('type','text');
+	let updateWorkoutWeightTitle = document.createElement('p');
+	updateWorkoutWeightTitle.textContent = 'Weight:';
+	updateWorkoutDiv.appendChild(updateWorkoutWeightTitle);
 	updateWorkoutDiv.appendChild(updateWorkoutWeight);
 
 	let updateWorkoutReps = document.createElement('input');
 	updateWorkoutReps.setAttribute('type', 'text');
+	let updateWorkoutRepsTitle = document.createElement('p');
+	updateWorkoutRepsTitle.textContent = 'Reps:';
+	updateWorkoutDiv.appendChild(updateWorkoutRepsTitle);
 	updateWorkoutDiv.appendChild(updateWorkoutReps);
 
 	let updateWorkoutSets = document.createElement('input');
 	updateWorkoutSets.setAttribute('type', 'text');
+	let updateWorkoutSetsTitle = document.createElement('p');
+	updateWorkoutSetsTitle.textContent = 'Sets:';
+	updateWorkoutDiv.appendChild(updateWorkoutSetsTitle);
 	updateWorkoutDiv.appendChild(updateWorkoutSets);
 
 	let updateWorkoutRpe = document.createElement('input');
 	updateWorkoutRpe.setAttribute('type', 'text');
+	let updateWorkoutRpeTitle = document.createElement('p');
+	updateWorkoutRpeTitle.textContent = 'RPE:';
+	updateWorkoutDiv.appendChild(updateWorkoutRpeTitle);
 	updateWorkoutDiv.appendChild(updateWorkoutRpe);
 
 	let updateWorkout = document.createElement('input');
@@ -219,17 +241,4 @@ function addWorkout(){
 
 };
 
-function deleteWorkout(){
-
-	let workoutId = document.createElement('input');
-	workoutId.setAttribute('type', 'integer');
-	workoutId.setAttribute('placeholder', 'ID');
-
-	let deleteWorkoutBtn = document.createElement('input');
-	deleteWorkoutBtn.setAttribute('type', 'submit');
-	deleteWorkoutBtn.setAttribute('value', 'Delete Workout');
-
-	deleteWorkoutForm.appendChild(workoutId);
-	deleteWorkoutForm.appendChild(deleteWorkoutBtn);
-};
 
