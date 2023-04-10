@@ -2,6 +2,7 @@ window.addEventListener('load', function(e){
 	console.log('script.js is updated 2');
 	init();
 	addWorkout();
+	deleteWorkout();
 });
 
 linebreak = document.createElement('br');
@@ -145,6 +146,16 @@ function displayWorkout(workout){
 	let updateWorkout = document.createElement('input');
 	updateWorkout.setAttribute('type', 'submit');
 	updateWorkout.setAttribute('value', 'Update Workout');
+
+	let deleteWorkoutForm = document.createElement('form');
+	deleteWorkoutForm.setAttribute('method', 'DELETE');
+
+	let deleteWorkoutBtn = document.createElement('input');
+	deleteWorkoutBtn.setAttribute('type', 'submit');
+	deleteWorkoutBtn.setAttribute('value', 'Delete Workout');
+
+	detailDiv.appendChild(deleteWorkoutForm);
+	detailDiv.appendChild(deleteWorkoutBtn);
 }
 
 function addWorkout(){
@@ -209,6 +220,16 @@ function addWorkout(){
 };
 
 function deleteWorkout(){
-	
+
+	let workoutId = document.createElement('input');
+	workoutId.setAttribute('type', 'integer');
+	workoutId.setAttribute('placeholder', 'ID');
+
+	let deleteWorkoutBtn = document.createElement('input');
+	deleteWorkoutBtn.setAttribute('type', 'submit');
+	deleteWorkoutBtn.setAttribute('value', 'Delete Workout');
+
+	deleteWorkoutForm.appendChild(workoutId);
+	deleteWorkoutForm.appendChild(deleteWorkoutBtn);
 };
 
