@@ -18,7 +18,7 @@
       </tr>
     </tbody>
   </table>
-
+  <p>Average RPE: {{averageRpe() | number:'1.1-1'}}</p>
   <form>
     <input type="text"
     name="workout"
@@ -30,8 +30,12 @@
 
 <div id="workoutDetail" *ngIf="selected && !editWorkout">
   <p>ID: {{selected.id}}</p>
-  <p>Name: {{selected.name}}</p>
   <p>Day: {{selected.day}}</p>
+  <p>Name: {{selected.name}}</p>
+  <p>Group: {{selected.group}}</p>
+  <p>Weight: {{selected.weight}}</p>
+  <p>Sets: {{selected.sets}}</p>
+  <p>RPE: {{selected.rpe}}</p>
 
   <button class="btn btn-outline-danger" (click)="displayTable()">Back</button>
   <button class="btn btn-outline-primary" (click)="setEditWorkout()">Edit</button>

@@ -17,12 +17,14 @@ export class WorkoutService {
     private datePipe: DatePipe
   ) { }
 
+  // METHODS //
+
   index(): Observable<Workout[]> {
     return this.http.get<Workout[]>(this.url,).pipe(
       catchError((err: any) => {
         console.log(err);
         return throwError(
-          () => new Error('TodoService.index(): error retrieving Workouts: ' + err)
+          () => new Error('WorkoutService.index(): error retrieving Workouts: ' + err)
         );
       })
     );
@@ -35,7 +37,7 @@ export class WorkoutService {
       catchError((err: any) => {
         console.log(err);
         return throwError(
-          () => new Error ('Todo Service.create: error creating Workout: ' + err)
+          () => new Error ('Workout Service.create: error creating Workout: ' + err)
         );
       })
     );

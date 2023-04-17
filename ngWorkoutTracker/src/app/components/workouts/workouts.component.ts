@@ -1,3 +1,4 @@
+import { DatePipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { Workout } from 'src/app/models/workout';
 import { WorkoutService } from 'src/app/services/workout.service';
@@ -14,9 +15,11 @@ export class WorkoutsComponent {
   newWorkout: Workout = new Workout();
   editWorkout: Workout | null = null;
   showWorkout: boolean = false;
+  avgRpe: number = 0;
 
   constructor(
-    private workoutService: WorkoutService
+    private workoutService: WorkoutService,
+    private datePipe: DatePipe
   ){}
 
   ngOnInit(): void {
@@ -43,9 +46,7 @@ export class WorkoutsComponent {
        if(goToDetail){
          this.selected = updatedWorkout;
        }
-
        this.reload();
-
       },
       error: (err) =>{
         console.error('Error updating Workout' + err);
@@ -90,4 +91,13 @@ export class WorkoutsComponent {
       }
     });
   }
+
+  averageRpe(): number{
+    let total: number = 0;
+    for (let wo of this.workout){
+      total += wo.rpe;
+    }
+   return this.avgRpe = total/this.workout.length;
+  }
+
 }
