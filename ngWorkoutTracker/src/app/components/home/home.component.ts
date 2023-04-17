@@ -7,27 +7,6 @@ import { WorkoutService } from 'src/app/services/workout.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit{
+export class HomeComponent {
 
-  workout: Workout[] = [];
-
-  constructor(
-    private workoutService: WorkoutService
-  ){}
-
-  ngOnInit(): void {
-  this.reload();
-  }
-
-  // METHODS
-  reload(){
-    this.workoutService.index().subscribe({
-      next: (data)=> {
-        this.workout = data;
-      },
-      error: (err) => {
-        console.log("Error displaying Workouts: " + err)
-      }
-    });
-  }
 }
