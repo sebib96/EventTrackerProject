@@ -31,8 +31,6 @@ export class WorkoutService {
   }
 
   create(workout: Workout): Observable<Workout> {
-    workout.name = '';
-    workout.day = '';
     return this.http.post<Workout>(this.url, workout).pipe(
       catchError((err: any) => {
         console.log(err);
